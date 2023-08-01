@@ -1,23 +1,25 @@
 <script setup>
-import { ref } from 'vue'
-const color = ref('None')
+import { ref, reactive } from 'vue'
+const person = reactive({
+  name: 'John Doe',
+  age: 30,
+  job: 'Web Developer',
+})
 
-function getStyle() {
-  return {
-    backgroundColor: color.value,
-  }
-}
 </script>
 
 <template>
   <section class="mx-auto container">
     <h1 class="text-2xl mb-10">Vue Form</h1>
-    <p class="pb-5">Your Favorite Color: {{ color }}</p>
-    <p>
-      Your Favorite Color: 
-      <input class="p-5" v-model="color" />
-      <div class="w-32 h-32 mt-10" :style="getStyle()"></div>
+    <p class="mb-10">
+      {{ person }}
     </p>
+    
+    <div class="flex flex-col mb-5 text-left" v-for="(value, key, index) in person" :key="index">
+      <label class="pl-3" for="name">{{ key }}</label>
+      <input type="text" class="border border-gray-300 rounded-md p-2" v-model="person[key]" />
+    </div>
+
   </section>
 </template>
 <style scoped></style>
