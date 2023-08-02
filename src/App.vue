@@ -33,7 +33,11 @@ const displayImage = ref(true)
     <h1 class="text-2xl mb-10">Vue Form</h1>
     <p>{{ displayImage }}</p>
     <label for="">Display Random Image</label>
-    <input type="checkbox" name="" id="" class="ml-2" v-model="displayImage">
+    <!-- <input type="checkbox" name="" id="" class="ml-2" v-model="displayImage"> -->
+    <p class="mt-5">
+      <input type="radio" name="display" id="" :value="true" v-model="displayImage"> On <br>
+      <input type="radio" name="display" id="" :value="false" v-model="displayImage"> Off <br>
+    </p>
     <!-- <img
       v-show="displayImage" 
       :src="`https://source.unsplash.com/random`"
