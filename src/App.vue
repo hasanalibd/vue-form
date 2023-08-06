@@ -2,7 +2,13 @@
 import { ref } from 'vue'
 const color = ref('None')
 
-function getStyle() {
+// function getStyle() {
+//   return {
+//     backgroundColor: color.value,
+//   }
+// }
+
+function getStyle(){
   return {
     backgroundColor: color.value,
   }
