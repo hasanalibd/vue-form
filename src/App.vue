@@ -7,13 +7,21 @@ const person = reactive({
   job: 'Web Developer',
 })
 
+const user = reactive({
+  name: 'Hasan Ali',
+  age: 30,
+  job: 'Web Developer',
+  phone: '+8801850030472',
+  email: 'hasanali12522@gmail.com',
+})
+
 </script>
 
 <template>
   <section class="mx-auto container">
     <h1 class="text-2xl mb-10">Vue Form</h1>
     <p class="mb-10">
-      {{ person }}
+      {{ user }}
     </p>
     
     <!-- <div class="flex flex-col mb-5 text-left" v-for="(value, key, index) in person" :key="index">
@@ -31,9 +39,14 @@ const person = reactive({
       <input type="text" class="border border-gray-300 rounded-xl p-2" v-model="person[key]">
     </div> -->
 
-    <div class="flex flex-col mb-5 text-left" v-for="(value, key, index) in person" :key="index">
+    <!-- <div class="flex flex-col mb-5 text-left" v-for="(value, key, index) in person" :key="index">
       <label for="name" class="ml-2">{{ key }}</label>
       <input type="text" class="border border-gray-300 rounded-xl p-2" v-model="person[key]">
+    </div> -->
+
+    <div class="flex flex-col mb-5 text-left" v-for="(value, key, index) in user" :key="index">
+      <label for="name" class="ml-2">{{ key }}</label>
+      <input type="text" class="border border-gray-300 rounded-xl p-2" v-model="user[key]">
     </div>
 
   </section>
